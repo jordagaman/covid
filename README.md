@@ -24,15 +24,15 @@ df %>%
   pander::pandoc.table(caption = 'NYT COVID Tracking Data')
 ```
 
-<table>
+<table style="width:90%;">
 <caption>NYT COVID Tracking Data</caption>
 <colgroup>
-<col width="17%" />
-<col width="28%" />
-<col width="22%" />
-<col width="10%" />
-<col width="10%" />
-<col width="10%" />
+<col width="18%" />
+<col width="18%" />
+<col width="20%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -46,123 +46,123 @@ df %>%
 </thead>
 <tbody>
 <tr class="odd">
+<td align="center">2020-04-30</td>
+<td align="center">Duval</td>
+<td align="center">Texas</td>
+<td align="center">48131</td>
+<td align="center">2</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="center">2020-04-29</td>
+<td align="center">Johnson</td>
+<td align="center">Kansas</td>
+<td align="center">20091</td>
+<td align="center">454</td>
+<td align="center">40</td>
+</tr>
+<tr class="odd">
 <td align="center">2020-04-15</td>
-<td align="center">Pender</td>
-<td align="center">North Carolina</td>
-<td align="center">37141</td>
+<td align="center">Aroostook</td>
+<td align="center">Maine</td>
+<td align="center">23003</td>
+<td align="center">2</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="center">2020-04-17</td>
+<td align="center">Tunica</td>
+<td align="center">Mississippi</td>
+<td align="center">28143</td>
+<td align="center">28</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">2020-05-11</td>
+<td align="center">Johnson</td>
+<td align="center">Missouri</td>
+<td align="center">29101</td>
+<td align="center">63</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="center">2020-04-22</td>
+<td align="center">Leon</td>
+<td align="center">Texas</td>
+<td align="center">48289</td>
+<td align="center">5</td>
+<td align="center">0</td>
+</tr>
+<tr class="odd">
+<td align="center">2020-04-30</td>
+<td align="center">Lincoln</td>
+<td align="center">Washington</td>
+<td align="center">53043</td>
+<td align="center">2</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="center">2020-04-19</td>
+<td align="center">Atkinson</td>
+<td align="center">Georgia</td>
+<td align="center">13003</td>
+<td align="center">5</td>
+<td align="center">0</td>
+</tr>
+<tr class="odd">
+<td align="center">2020-04-11</td>
+<td align="center">Woodbury</td>
+<td align="center">Iowa</td>
+<td align="center">19193</td>
+<td align="center">18</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="center">2020-05-15</td>
+<td align="center">Washington</td>
+<td align="center">Oregon</td>
+<td align="center">41067</td>
+<td align="center">620</td>
+<td align="center">15</td>
+</tr>
+<tr class="odd">
+<td align="center">2020-04-18</td>
+<td align="center">Guadalupe</td>
+<td align="center">Texas</td>
+<td align="center">48187</td>
+<td align="center">53</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="center">2020-05-01</td>
+<td align="center">Broward</td>
+<td align="center">Florida</td>
+<td align="center">12011</td>
+<td align="center">5144</td>
+<td align="center">199</td>
+</tr>
+<tr class="odd">
+<td align="center">2020-05-07</td>
+<td align="center">Union</td>
+<td align="center">Florida</td>
+<td align="center">12125</td>
 <td align="center">5</td>
 <td align="center">0</td>
 </tr>
 <tr class="even">
-<td align="center">2020-05-12</td>
-<td align="center">Wilkes</td>
-<td align="center">North Carolina</td>
-<td align="center">37193</td>
-<td align="center">243</td>
-<td align="center">1</td>
-</tr>
-<tr class="odd">
-<td align="center">2020-04-02</td>
-<td align="center">Neshoba</td>
-<td align="center">Mississippi</td>
-<td align="center">28099</td>
-<td align="center">4</td>
-<td align="center">0</td>
-</tr>
-<tr class="even">
-<td align="center">2020-04-05</td>
-<td align="center">Madison</td>
-<td align="center">New York</td>
-<td align="center">36053</td>
-<td align="center">89</td>
-<td align="center">2</td>
-</tr>
-<tr class="odd">
 <td align="center">2020-05-06</td>
-<td align="center">Sullivan</td>
-<td align="center">New Hampshire</td>
-<td align="center">33019</td>
-<td align="center">13</td>
-<td align="center">1</td>
-</tr>
-<tr class="even">
-<td align="center">2020-05-16</td>
-<td align="center">Bartholomew</td>
-<td align="center">Indiana</td>
-<td align="center">18005</td>
-<td align="center">412</td>
-<td align="center">33</td>
-</tr>
-<tr class="odd">
-<td align="center">2020-05-12</td>
-<td align="center">Hancock</td>
-<td align="center">West Virginia</td>
-<td align="center">54029</td>
-<td align="center">12</td>
-<td align="center">0</td>
-</tr>
-<tr class="even">
-<td align="center">2020-04-03</td>
-<td align="center">Faulk</td>
-<td align="center">South Dakota</td>
-<td align="center">46049</td>
-<td align="center">1</td>
-<td align="center">0</td>
-</tr>
-<tr class="odd">
-<td align="center">2020-04-16</td>
-<td align="center">Jewell</td>
-<td align="center">Kansas</td>
-<td align="center">20089</td>
-<td align="center">3</td>
-<td align="center">0</td>
-</tr>
-<tr class="even">
-<td align="center">2020-05-13</td>
-<td align="center">Bethel Census Area</td>
-<td align="center">Alaska</td>
-<td align="center">02050</td>
-<td align="center">1</td>
-<td align="center">0</td>
-</tr>
-<tr class="odd">
-<td align="center">2020-04-29</td>
-<td align="center">DeKalb</td>
-<td align="center">Illinois</td>
-<td align="center">17037</td>
-<td align="center">90</td>
-<td align="center">1</td>
-</tr>
-<tr class="even">
-<td align="center">2020-04-24</td>
-<td align="center">Windham</td>
-<td align="center">Connecticut</td>
-<td align="center">09015</td>
-<td align="center">139</td>
-<td align="center">4</td>
-</tr>
-<tr class="odd">
-<td align="center">2020-04-02</td>
-<td align="center">Union</td>
-<td align="center">Florida</td>
-<td align="center">12125</td>
-<td align="center">1</td>
-<td align="center">0</td>
-</tr>
-<tr class="even">
-<td align="center">2020-05-05</td>
-<td align="center">Greeley</td>
-<td align="center">Nebraska</td>
-<td align="center">31077</td>
+<td align="center">Pierce</td>
+<td align="center">North Dakota</td>
+<td align="center">38069</td>
 <td align="center">2</td>
 <td align="center">0</td>
 </tr>
 <tr class="odd">
-<td align="center">2020-05-11</td>
-<td align="center">Elbert</td>
-<td align="center">Colorado</td>
-<td align="center">08039</td>
-<td align="center">39</td>
+<td align="center">2020-04-01</td>
+<td align="center">Putnam</td>
+<td align="center">Indiana</td>
+<td align="center">18133</td>
+<td align="center">11</td>
 <td align="center">1</td>
 </tr>
 </tbody>
@@ -225,109 +225,109 @@ df %>%
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">Mercer, New Jersey</td>
-<td align="center">2020-03-25</td>
+<td align="center">Alameda, California</td>
+<td align="center">2020-04-06</td>
 <td align="center">cases</td>
-<td align="center">82</td>
+<td align="center">609</td>
+<td align="center">22</td>
+</tr>
+<tr class="even">
+<td align="center">Mercer, New Jersey</td>
+<td align="center">2020-03-30</td>
+<td align="center">deaths</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr class="odd">
+<td align="center">Alameda, California</td>
+<td align="center">2020-05-12</td>
+<td align="center">cases</td>
+<td align="center">2154</td>
+<td align="center">32</td>
+</tr>
+<tr class="even">
+<td align="center">Alameda, California</td>
+<td align="center">2020-05-05</td>
+<td align="center">cases</td>
+<td align="center">1830</td>
+<td align="center">33</td>
+</tr>
+<tr class="odd">
+<td align="center">Mercer, New Jersey</td>
+<td align="center">2020-03-21</td>
+<td align="center">deaths</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="center">Mercer, New Jersey</td>
+<td align="center">2020-04-08</td>
+<td align="center">cases</td>
+<td align="center">992</td>
+<td align="center">155</td>
+</tr>
+<tr class="odd">
+<td align="center">Alameda, California</td>
+<td align="center">2020-03-26</td>
+<td align="center">deaths</td>
+<td align="center">4</td>
+<td align="center">2</td>
+</tr>
+<tr class="even">
+<td align="center">Alameda, California</td>
+<td align="center">2020-03-14</td>
+<td align="center">deaths</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr class="odd">
+<td align="center">Alameda, California</td>
+<td align="center">2020-04-24</td>
+<td align="center">deaths</td>
+<td align="center">48</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="center">Alameda, California</td>
+<td align="center">2020-04-03</td>
+<td align="center">cases</td>
+<td align="center">464</td>
+<td align="center">47</td>
+</tr>
+<tr class="odd">
+<td align="center">Alameda, California</td>
+<td align="center">2020-04-17</td>
+<td align="center">deaths</td>
+<td align="center">40</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="center">Alameda, California</td>
+<td align="center">2020-04-08</td>
+<td align="center">cases</td>
+<td align="center">695</td>
+<td align="center">40</td>
+</tr>
+<tr class="odd">
+<td align="center">Mercer, New Jersey</td>
+<td align="center">2020-05-05</td>
+<td align="center">deaths</td>
+<td align="center">280</td>
 <td align="center">24</td>
 </tr>
 <tr class="even">
-<td align="center">Alameda, California</td>
-<td align="center">2020-04-02</td>
-<td align="center">cases</td>
-<td align="center">417</td>
-<td align="center">37</td>
-</tr>
-<tr class="odd">
-<td align="center">Alameda, California</td>
-<td align="center">2020-03-08</td>
-<td align="center">deaths</td>
-<td align="center">0</td>
-<td align="center">0</td>
-</tr>
-<tr class="even">
-<td align="center">Alameda, California</td>
-<td align="center">2020-03-18</td>
-<td align="center">cases</td>
-<td align="center">53</td>
-<td align="center">4</td>
-</tr>
-<tr class="odd">
-<td align="center">Alameda, California</td>
-<td align="center">2020-03-15</td>
-<td align="center">cases</td>
-<td align="center">37</td>
-<td align="center">8</td>
-</tr>
-<tr class="even">
 <td align="center">Mercer, New Jersey</td>
-<td align="center">2020-05-06</td>
-<td align="center">cases</td>
-<td align="center">4860</td>
-<td align="center">117</td>
-</tr>
-<tr class="odd">
-<td align="center">Alameda, California</td>
-<td align="center">2020-03-19</td>
-<td align="center">deaths</td>
-<td align="center">0</td>
-<td align="center">0</td>
-</tr>
-<tr class="even">
-<td align="center">Alameda, California</td>
-<td align="center">2020-04-24</td>
-<td align="center">cases</td>
-<td align="center">1422</td>
-<td align="center">72</td>
-</tr>
-<tr class="odd">
-<td align="center">Alameda, California</td>
-<td align="center">2020-04-03</td>
-<td align="center">deaths</td>
-<td align="center">12</td>
-<td align="center">3</td>
-</tr>
-<tr class="even">
-<td align="center">Alameda, California</td>
 <td align="center">2020-04-01</td>
-<td align="center">deaths</td>
-<td align="center">8</td>
-<td align="center">1</td>
-</tr>
-<tr class="odd">
-<td align="center">Alameda, California</td>
-<td align="center">2020-05-06</td>
-<td align="center">deaths</td>
-<td align="center">69</td>
-<td align="center">3</td>
-</tr>
-<tr class="even">
-<td align="center">Mercer, New Jersey</td>
-<td align="center">2020-03-25</td>
-<td align="center">deaths</td>
-<td align="center">0</td>
-<td align="center">0</td>
-</tr>
-<tr class="odd">
-<td align="center">Alameda, California</td>
-<td align="center">2020-05-13</td>
-<td align="center">deaths</td>
-<td align="center">80</td>
-<td align="center">5</td>
-</tr>
-<tr class="even">
-<td align="center">Alameda, California</td>
-<td align="center">2020-04-19</td>
 <td align="center">cases</td>
-<td align="center">1185</td>
-<td align="center">50</td>
+<td align="center">333</td>
+<td align="center">65</td>
 </tr>
 <tr class="odd">
-<td align="center">Alameda, California</td>
-<td align="center">2020-03-03</td>
+<td align="center">Mercer, New Jersey</td>
+<td align="center">2020-04-25</td>
 <td align="center">deaths</td>
-<td align="center">0</td>
-<td align="center">0</td>
+<td align="center">183</td>
+<td align="center">5</td>
 </tr>
 </tbody>
 </table>
@@ -360,7 +360,7 @@ This looks at the daily increase.
 
 ``` r
 ggplot(df, aes(x = date, y = new, color = type)) +
-  geom_step() +
+  geom_step(show.legend = FALSE) +
   scale_x_date(name        = '',
                date_breaks = '1 week',
                labels      = scales::date_format('%m/%d')) +
@@ -379,7 +379,7 @@ df %>%
   dplyr::group_by(lubridate::week(date), type, county) %>% 
   dplyr::summarize(new = sum(new), date = min(date)) %>%
   ggplot(aes(x = date, y = new, color = type)) +
-  geom_step() +
+  geom_step(show.legend = FALSE) +
   scale_x_date(name        = '',
                date_breaks = '1 week',
                labels      = scales::date_format('%m/%d')) +

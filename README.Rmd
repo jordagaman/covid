@@ -90,7 +90,7 @@ This looks at the daily increase.
 
 ```{r plot-daily, fig.height=3, fig.width=6}
 ggplot(df, aes(x = date, y = new, color = type)) +
-  geom_step() +
+  geom_step(show.legend = FALSE) +
   scale_x_date(name        = '',
                date_breaks = '1 week',
                labels      = scales::date_format('%m/%d')) +
@@ -106,7 +106,7 @@ df %>%
   dplyr::group_by(lubridate::week(date), type, county) %>% 
   dplyr::summarize(new = sum(new), date = min(date)) %>%
   ggplot(aes(x = date, y = new, color = type)) +
-  geom_step() +
+  geom_step(show.legend = FALSE) +
   scale_x_date(name        = '',
                date_breaks = '1 week',
                labels      = scales::date_format('%m/%d')) +
