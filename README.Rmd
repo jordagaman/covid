@@ -1,0 +1,117 @@
+---
+title: "COVID-19 Data from NYT for Counties of Interest"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
+## Get the Data
+
+The NYT is super generous with their data. Go get it.
+
+```{r data}
+library(tidyverse)
+library(magrittr)
+curl::curl_download(
+  url      = 'https://github.com/nytimes/covid-19-data/raw/master/us-counties.csv',
+  destfile = './county-cases.csv'
+)
+df <- read_csv('county-cases.csv') 
+```
+
+Are you curious what it looks like? It looks like this.
+
+```{r showdata, results = 'asis'}
+df %>%
+  sample_n(15) %>%
+  pander::pandoc.table(caption = 'NYT COVID Tracking Data')
+```
+
+## Tidy the data
+
+Tidy the data by filtering on the counties of interest, and gathering values of interest into a single column.
+
+```{r tidy}
+county_list = c(
+  'Alameda, California', 
+  #'Contra Costa, California', 
+  #'Bernalillo, New Mexico', 
+  #'Mecklenburg, North Carolina',
+  'Mercer, New Jersey'
+)
+df %<>%
+  # filter on the county_list
+  mutate(county = paste(county, state, sep = ', ')) %>%
+  filter(county %in% county_list) %>% 
+  # we don't need everything, keep only the region, day, and counts
+  select(county, date, cases, deaths) %>%
+  # tidy the data by putting all observations in rows
+  gather(key = type, value = number, -date, -county) %>%
+  # group by county and type (deaths or cases) to get a delta column for new cases in a day
+  group_by(county, type) %>%
+  arrange(date) %>%
+  mutate(new = number - lag(number, default = 0)) %>%
+  ungroup()
+```
+
+Curious what it looks like now? It looks like this.
+
+```{r tidy-show, results='asis'}
+df %>%
+  arrange(date) %>%
+  sample_n(15) %>%
+  pander::pandoc.table(caption = 'Tracking Data Ready for Plotting')
+```
+
+## Plot the data
+
+This is what the straight-up cumulative data looks like.
+
+```{r plot-cumulative, fig.height=3, fig.width=6}
+# time for plotting
+library(ggplot2)
+ggplot(df, aes(x = date, y = number, fill = type)) +
+  geom_area(alpha    = 0.5,
+            position = 'identity',
+            show.legend = FALSE) +
+  scale_y_continuous(name   = '',
+                     labels = scales::comma) +
+  scale_x_date(name        = '',
+               date_breaks = '1 week',
+               labels      = scales::date_format('%m/%d')) +
+  facet_grid(type~county, scales = 'free_y') +
+  theme_classic() +
+  theme(axis.text.x = element_text(angle = 40, hjust = 1))
+```
+
+This looks at the daily increase.
+
+```{r plot-daily, fig.height=3, fig.width=6}
+ggplot(df, aes(x = date, y = new, color = type)) +
+  geom_step() +
+  scale_x_date(name        = '',
+               date_breaks = '1 week',
+               labels      = scales::date_format('%m/%d')) +
+  scale_y_continuous(name   = 'Daily Increase') +
+  facet_grid(type~county, scales = 'free_y') +
+  theme_classic() +
+  theme(axis.text.x = element_text(angle = 40, hjust = 1))
+```
+
+Because of the noise in the daily data, maybe a weekly increase is a better idea.
+```{r plot-weekly, fig.height=3, fig.width=6}
+df %>% 
+  dplyr::group_by(lubridate::week(date), type, county) %>% 
+  dplyr::summarize(new = sum(new), date = min(date)) %>%
+  ggplot(aes(x = date, y = new, color = type)) +
+  geom_step() +
+  scale_x_date(name        = '',
+               date_breaks = '1 week',
+               labels      = scales::date_format('%m/%d')) +
+  scale_y_continuous(name   = 'Weekly Increase') +
+  facet_grid(type~county, scales = 'free_y') +
+  theme_classic() +
+  theme(axis.text.x = element_text(angle = 40, hjust = 1))
+```

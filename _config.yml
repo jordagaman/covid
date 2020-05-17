@@ -1,0 +1,4 @@
+theme: jekyll-theme-leap-day
+title: Plotting COVID Data
+description: Using R to plot COVID-19 tracking data from the New York Times.
+show_downloads: false
