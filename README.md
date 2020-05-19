@@ -26,11 +26,11 @@ df %>%
   pander::pandoc.table(caption = 'NYT COVID Tracking Data')
 ```
 
-<table style="width:90%;">
+<table style="width:93%;">
 <caption>NYT COVID Tracking Data</caption>
 <colgroup>
 <col width="18%" />
-<col width="18%" />
+<col width="20%" />
 <col width="20%" />
 <col width="11%" />
 <col width="11%" />
@@ -48,123 +48,123 @@ df %>%
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">2020-04-30</td>
-<td align="center">Duval</td>
-<td align="center">Texas</td>
-<td align="center">48131</td>
-<td align="center">2</td>
-<td align="center">0</td>
+<td align="center">2020-04-27</td>
+<td align="center">Putnam</td>
+<td align="center">Ohio</td>
+<td align="center">39137</td>
+<td align="center">54</td>
+<td align="center">5</td>
 </tr>
 <tr class="even">
-<td align="center">2020-04-29</td>
-<td align="center">Johnson</td>
+<td align="center">2020-03-25</td>
+<td align="center">Linn</td>
 <td align="center">Kansas</td>
-<td align="center">20091</td>
-<td align="center">454</td>
-<td align="center">40</td>
+<td align="center">20107</td>
+<td align="center">2</td>
+<td align="center">0</td>
 </tr>
 <tr class="odd">
-<td align="center">2020-04-15</td>
-<td align="center">Aroostook</td>
-<td align="center">Maine</td>
-<td align="center">23003</td>
-<td align="center">2</td>
+<td align="center">2020-04-24</td>
+<td align="center">Wharton</td>
+<td align="center">Texas</td>
+<td align="center">48481</td>
+<td align="center">36</td>
 <td align="center">0</td>
 </tr>
 <tr class="even">
-<td align="center">2020-04-17</td>
-<td align="center">Tunica</td>
-<td align="center">Mississippi</td>
-<td align="center">28143</td>
-<td align="center">28</td>
+<td align="center">2020-04-15</td>
+<td align="center">Chautauqua</td>
+<td align="center">New York</td>
+<td align="center">36013</td>
+<td align="center">24</td>
 <td align="center">1</td>
 </tr>
 <tr class="odd">
-<td align="center">2020-05-11</td>
-<td align="center">Johnson</td>
-<td align="center">Missouri</td>
-<td align="center">29101</td>
-<td align="center">63</td>
+<td align="center">2020-04-05</td>
+<td align="center">Dallas</td>
+<td align="center">Iowa</td>
+<td align="center">19049</td>
+<td align="center">35</td>
 <td align="center">0</td>
 </tr>
 <tr class="even">
-<td align="center">2020-04-22</td>
-<td align="center">Leon</td>
-<td align="center">Texas</td>
-<td align="center">48289</td>
-<td align="center">5</td>
-<td align="center">0</td>
-</tr>
-<tr class="odd">
-<td align="center">2020-04-30</td>
-<td align="center">Lincoln</td>
-<td align="center">Washington</td>
-<td align="center">53043</td>
-<td align="center">2</td>
-<td align="center">0</td>
-</tr>
-<tr class="even">
-<td align="center">2020-04-19</td>
-<td align="center">Atkinson</td>
-<td align="center">Georgia</td>
-<td align="center">13003</td>
-<td align="center">5</td>
+<td align="center">2020-03-17</td>
+<td align="center">Washtenaw</td>
+<td align="center">Michigan</td>
+<td align="center">26161</td>
+<td align="center">7</td>
 <td align="center">0</td>
 </tr>
 <tr class="odd">
 <td align="center">2020-04-11</td>
-<td align="center">Woodbury</td>
-<td align="center">Iowa</td>
-<td align="center">19193</td>
-<td align="center">18</td>
+<td align="center">Polk</td>
+<td align="center">Missouri</td>
+<td align="center">29167</td>
+<td align="center">1</td>
 <td align="center">0</td>
 </tr>
 <tr class="even">
-<td align="center">2020-05-15</td>
-<td align="center">Washington</td>
-<td align="center">Oregon</td>
-<td align="center">41067</td>
-<td align="center">620</td>
-<td align="center">15</td>
-</tr>
-<tr class="odd">
-<td align="center">2020-04-18</td>
-<td align="center">Guadalupe</td>
-<td align="center">Texas</td>
-<td align="center">48187</td>
-<td align="center">53</td>
-<td align="center">0</td>
-</tr>
-<tr class="even">
-<td align="center">2020-05-01</td>
-<td align="center">Broward</td>
-<td align="center">Florida</td>
-<td align="center">12011</td>
-<td align="center">5144</td>
-<td align="center">199</td>
-</tr>
-<tr class="odd">
-<td align="center">2020-05-07</td>
-<td align="center">Union</td>
-<td align="center">Florida</td>
-<td align="center">12125</td>
-<td align="center">5</td>
-<td align="center">0</td>
-</tr>
-<tr class="even">
-<td align="center">2020-05-06</td>
-<td align="center">Pierce</td>
-<td align="center">North Dakota</td>
-<td align="center">38069</td>
-<td align="center">2</td>
+<td align="center">2020-05-05</td>
+<td align="center">Washburn</td>
+<td align="center">Wisconsin</td>
+<td align="center">55129</td>
+<td align="center">1</td>
 <td align="center">0</td>
 </tr>
 <tr class="odd">
-<td align="center">2020-04-01</td>
-<td align="center">Putnam</td>
-<td align="center">Indiana</td>
-<td align="center">18133</td>
+<td align="center">2020-04-08</td>
+<td align="center">Accomack</td>
+<td align="center">Virginia</td>
+<td align="center">51001</td>
 <td align="center">11</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="center">2020-04-14</td>
+<td align="center">Zapata</td>
+<td align="center">Texas</td>
+<td align="center">48505</td>
+<td align="center">3</td>
+<td align="center">0</td>
+</tr>
+<tr class="odd">
+<td align="center">2020-03-26</td>
+<td align="center">Unicoi</td>
+<td align="center">Tennessee</td>
+<td align="center">47171</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="center">2020-03-28</td>
+<td align="center">Wayne</td>
+<td align="center">Indiana</td>
+<td align="center">18177</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr class="odd">
+<td align="center">2020-05-03</td>
+<td align="center">Spotsylvania</td>
+<td align="center">Virginia</td>
+<td align="center">51177</td>
+<td align="center">186</td>
+<td align="center">4</td>
+</tr>
+<tr class="even">
+<td align="center">2020-03-21</td>
+<td align="center">Jefferson</td>
+<td align="center">Tennessee</td>
+<td align="center">47089</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr class="odd">
+<td align="center">2020-04-11</td>
+<td align="center">Davison</td>
+<td align="center">South Dakota</td>
+<td align="center">46035</td>
+<td align="center">3</td>
 <td align="center">1</td>
 </tr>
 </tbody>
@@ -227,109 +227,109 @@ df %>%
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">Alameda, California</td>
+<td align="center">Mercer, New Jersey</td>
 <td align="center">2020-04-06</td>
-<td align="center">cases</td>
-<td align="center">609</td>
-<td align="center">22</td>
-</tr>
-<tr class="even">
-<td align="center">Mercer, New Jersey</td>
-<td align="center">2020-03-30</td>
 <td align="center">deaths</td>
-<td align="center">0</td>
-<td align="center">0</td>
-</tr>
-<tr class="odd">
-<td align="center">Alameda, California</td>
-<td align="center">2020-05-12</td>
-<td align="center">cases</td>
-<td align="center">2154</td>
-<td align="center">32</td>
+<td align="center">19</td>
+<td align="center">3</td>
 </tr>
 <tr class="even">
-<td align="center">Alameda, California</td>
-<td align="center">2020-05-05</td>
+<td align="center">Mercer, New Jersey</td>
+<td align="center">2020-04-11</td>
 <td align="center">cases</td>
-<td align="center">1830</td>
-<td align="center">33</td>
+<td align="center">1434</td>
+<td align="center">152</td>
 </tr>
 <tr class="odd">
-<td align="center">Mercer, New Jersey</td>
-<td align="center">2020-03-21</td>
+<td align="center">Alameda, California</td>
+<td align="center">2020-03-08</td>
 <td align="center">deaths</td>
 <td align="center">0</td>
 <td align="center">0</td>
 </tr>
 <tr class="even">
 <td align="center">Mercer, New Jersey</td>
-<td align="center">2020-04-08</td>
+<td align="center">2020-03-15</td>
+<td align="center">deaths</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr class="odd">
+<td align="center">Alameda, California</td>
+<td align="center">2020-04-01</td>
 <td align="center">cases</td>
-<td align="center">992</td>
-<td align="center">155</td>
-</tr>
-<tr class="odd">
-<td align="center">Alameda, California</td>
-<td align="center">2020-03-26</td>
-<td align="center">deaths</td>
-<td align="center">4</td>
-<td align="center">2</td>
+<td align="center">380</td>
+<td align="center">46</td>
 </tr>
 <tr class="even">
 <td align="center">Alameda, California</td>
-<td align="center">2020-03-14</td>
-<td align="center">deaths</td>
-<td align="center">0</td>
-<td align="center">0</td>
-</tr>
-<tr class="odd">
-<td align="center">Alameda, California</td>
-<td align="center">2020-04-24</td>
-<td align="center">deaths</td>
-<td align="center">48</td>
-<td align="center">0</td>
-</tr>
-<tr class="even">
-<td align="center">Alameda, California</td>
-<td align="center">2020-04-03</td>
+<td align="center">2020-03-31</td>
 <td align="center">cases</td>
-<td align="center">464</td>
-<td align="center">47</td>
+<td align="center">334</td>
+<td align="center">30</td>
 </tr>
 <tr class="odd">
-<td align="center">Alameda, California</td>
-<td align="center">2020-04-17</td>
-<td align="center">deaths</td>
-<td align="center">40</td>
-<td align="center">0</td>
-</tr>
-<tr class="even">
-<td align="center">Alameda, California</td>
-<td align="center">2020-04-08</td>
-<td align="center">cases</td>
-<td align="center">695</td>
-<td align="center">40</td>
-</tr>
-<tr class="odd">
-<td align="center">Mercer, New Jersey</td>
-<td align="center">2020-05-05</td>
-<td align="center">deaths</td>
-<td align="center">280</td>
-<td align="center">24</td>
-</tr>
-<tr class="even">
 <td align="center">Mercer, New Jersey</td>
 <td align="center">2020-04-01</td>
 <td align="center">cases</td>
 <td align="center">333</td>
 <td align="center">65</td>
 </tr>
+<tr class="even">
+<td align="center">Mercer, New Jersey</td>
+<td align="center">2020-04-16</td>
+<td align="center">cases</td>
+<td align="center">2037</td>
+<td align="center">181</td>
+</tr>
+<tr class="odd">
+<td align="center">Alameda, California</td>
+<td align="center">2020-04-26</td>
+<td align="center">deaths</td>
+<td align="center">52</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="center">Alameda, California</td>
+<td align="center">2020-05-01</td>
+<td align="center">deaths</td>
+<td align="center">63</td>
+<td align="center">0</td>
+</tr>
+<tr class="odd">
+<td align="center">Alameda, California</td>
+<td align="center">2020-03-22</td>
+<td align="center">cases</td>
+<td align="center">127</td>
+<td align="center">40</td>
+</tr>
+<tr class="even">
+<td align="center">Alameda, California</td>
+<td align="center">2020-05-14</td>
+<td align="center">cases</td>
+<td align="center">2202</td>
+<td align="center">3</td>
+</tr>
 <tr class="odd">
 <td align="center">Mercer, New Jersey</td>
 <td align="center">2020-04-25</td>
-<td align="center">deaths</td>
-<td align="center">183</td>
-<td align="center">5</td>
+<td align="center">cases</td>
+<td align="center">3245</td>
+<td align="center">159</td>
+</tr>
+<tr class="even">
+<td align="center">Mercer, New Jersey</td>
+<td align="center">2020-04-02</td>
+<td align="center">cases</td>
+<td align="center">386</td>
+<td align="center">53</td>
+</tr>
+<tr class="odd">
+<td align="center">Alameda, California</td>
+<td align="center">2020-03-26</td>
+<td align="center">cases</td>
+<td align="center">199</td>
+<td align="center">43</td>
 </tr>
 </tbody>
 </table>
