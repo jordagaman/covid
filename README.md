@@ -1,6 +1,8 @@
 COVID-19 Data from NYT for Counties of Interest
 ================
 
+Updated: Tue May 19 07:45:19 2020
+
 Get the Data
 ------------
 
