@@ -1,0 +1,52 @@
+---
+title: "COVID-19 Data from NYT for US Counties"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
+Updated: `r date()`
+
+## Get the Data
+
+See [here](./README.md) for where the data came from.
+
+
+## Tidy the data
+
+Tidy the data by filtering on the counties of interest, and gathering values of interest into a single column.
+
+```{r tidy}
+library(tidyverse)
+#library(usmap)
+df <- 
+  read_csv('county-cases.csv') %>%
+  filter(!is.na(fips)) %>%
+  left_join(select(usmap::countypop, fips, population = pop_2015), 
+            by = 'fips') %>%
+  # we don't need everything, keep only the region, day, and counts
+  select(fips, county, date, cases, deaths, population) %>%
+  # tidy the data by putting all observations in rows
+  gather(key = type, value = number, -date, -county, -population, -fips) %>%
+  mutate(per_capita = number / population)
+  # group by county and type (deaths or cases) to get a delta column for new cases in a day
+  #group_by(county, type) %>%
+  #arrange(date) %>%
+  #mutate(new = number - lag(number, default = 0)) %>%
+  #ungroup()
+
+df %>% 
+  filter(date == '2020-05-29') %>%
+  filter(type == 'cases') %>%
+  select(fips, values = per_capita) %>%
+  #rowwise() %>%
+  #mutate(values = min(values, 0.01)) %>%
+  #ungroup() %>%
+  usmap::map_with_data() %>%
+  ggplot(aes(x=x, y=y, fill = -log10(values), group = fips)) +
+  geom_polygon(size = 0.1)
+
+```
+
