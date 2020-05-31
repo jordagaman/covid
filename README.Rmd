@@ -9,6 +9,8 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 
 Updated: `r date()`
 
+Note: check out the [map project](./map.md) to see all counties.
+
 ## Get the Data
 
 The NYT is super generous with their data. Go get it.
