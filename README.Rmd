@@ -27,7 +27,7 @@ Are you curious what it looks like? It looks like this.
 
 ```{r showdata, results = 'asis'}
 df %>%
-  sample_n(15) %>%
+  sample_n(5) %>%
   pander::pandoc.table(caption = 'NYT COVID Tracking Data')
 ```
 
