@@ -63,7 +63,7 @@ Curious what it looks like now? It looks like this.
 ```{r tidy-show, results='asis'}
 df %>%
   arrange(date) %>%
-  sample_n(15) %>%
+  sample_n(5) %>%
   pander::pandoc.table(caption = 'Tracking Data Ready for Plotting')
 ```
 
