@@ -46,11 +46,15 @@ county_list = c(
 df %<>%
   # filter on the county_list
   mutate(county = paste(county, state, sep = ', ')) %>%
+  # fips is NA when the data is at the state level
+  filter(!is.na(fips)) %>%
+  left_join(select(usmap::countypop, fips, population = pop_2015), 
+            by = 'fips') %>%
   filter(county %in% county_list) %>% 
   # we don't need everything, keep only the region, day, and counts
-  select(county, date, cases, deaths) %>%
+  select(county, date, cases, deaths, population) %>%
   # tidy the data by putting all observations in rows
-  gather(key = type, value = number, -date, -county) %>%
+  gather(key = type, value = number, -date, -county, -population) %>%
   # group by county and type (deaths or cases) to get a delta column for new cases in a day
   group_by(county, type) %>%
   arrange(date) %>%
@@ -74,11 +78,11 @@ This is what the straight-up cumulative data looks like.
 ```{r plot-cumulative, fig.height=3, fig.width=6}
 # time for plotting
 library(ggplot2)
-ggplot(df, aes(x = date, y = number, fill = type)) +
+ggplot(df, aes(x = date, y = number/population*1e5, fill = type)) +
   geom_area(alpha    = 0.5,
             position = 'identity',
             show.legend = FALSE) +
-  scale_y_continuous(name   = '',
+  scale_y_continuous(name   = 'Per 100,000 People',
                      labels = scales::comma) +
   scale_x_date(name        = '',
                date_breaks = '1 week',
@@ -91,12 +95,12 @@ ggplot(df, aes(x = date, y = number, fill = type)) +
 This looks at the daily increase.
 
 ```{r plot-daily, fig.height=3, fig.width=6}
-ggplot(df, aes(x = date, y = new, color = type)) +
+ggplot(df, aes(x = date, y = new/population*1e5, color = type)) +
   geom_step(show.legend = FALSE) +
   scale_x_date(name        = '',
                date_breaks = '1 week',
                labels      = scales::date_format('%m/%d')) +
-  scale_y_continuous(name   = 'Daily Increase') +
+  scale_y_continuous(name   = 'Daily Cases Per 100,000 People') +
   facet_grid(type~county, scales = 'free_y') +
   theme_classic() +
   theme(axis.text.x = element_text(angle = 40, hjust = 1))
@@ -105,14 +109,14 @@ ggplot(df, aes(x = date, y = new, color = type)) +
 Because of the noise in the daily data, maybe a weekly increase is a better idea.
 ```{r plot-weekly, fig.height=3, fig.width=6}
 df %>% 
-  dplyr::group_by(lubridate::week(date), type, county) %>% 
+  dplyr::group_by(lubridate::week(date), type, county, population) %>% 
   dplyr::summarize(new = sum(new), date = min(date)) %>%
-  ggplot(aes(x = date, y = new, color = type)) +
+  ggplot(aes(x = date, y = new/population*1e5, color = type)) +
   geom_step(show.legend = FALSE) +
   scale_x_date(name        = '',
                date_breaks = '1 week',
                labels      = scales::date_format('%m/%d')) +
-  scale_y_continuous(name   = 'Weekly Increase') +
+  scale_y_continuous(name   = 'Weekly Cases Per 100,000 People') +
   facet_grid(type~county, scales = 'free_y') +
   theme_classic() +
   theme(axis.text.x = element_text(angle = 40, hjust = 1))
