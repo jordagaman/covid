@@ -1,0 +1,8 @@
+#!/bin/zsh
+(sleep 3 ; open -a Safari.app http://localhost:8787) &
+docker run              \
+--rm                    \
+-v $(pwd):/home/rstudio \
+-e PASSWORD=Rochambeau  \
+-p 8787:8787            \
+rocker/verse:3.6.3
