@@ -1,7 +1,7 @@
 COVID-19 Data from NYT for Counties of Interest
 ================
 
-Updated: Sat Jun 13 09:47:32 2020
+Updated: Sat Jun 13 10:06:17 2020
 
 Get the Data
 ------------
@@ -26,12 +26,12 @@ df %>%
   pander::pandoc.table(caption = 'NYT COVID Tracking Data')
 ```
 
-<table style="width:96%;">
+<table style="width:90%;">
 <caption>NYT COVID Tracking Data</caption>
 <colgroup>
 <col width="18%" />
 <col width="20%" />
-<col width="23%" />
+<col width="18%" />
 <col width="11%" />
 <col width="11%" />
 <col width="11%" />
@@ -48,44 +48,44 @@ df %>%
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">2020-03-07</td>
-<td align="center">Spokane</td>
-<td align="center">Washington</td>
-<td align="center">53063</td>
-<td align="center">4</td>
+<td align="center">2020-04-17</td>
+<td align="center">Humboldt</td>
+<td align="center">California</td>
+<td align="center">06023</td>
+<td align="center">52</td>
 <td align="center">0</td>
 </tr>
 <tr class="even">
-<td align="center">2020-05-08</td>
-<td align="center">Harding</td>
-<td align="center">New Mexico</td>
-<td align="center">35021</td>
-<td align="center">1</td>
-<td align="center">0</td>
-</tr>
-<tr class="odd">
-<td align="center">2020-04-14</td>
-<td align="center">Androscoggin</td>
-<td align="center">Maine</td>
-<td align="center">23001</td>
-<td align="center">29</td>
-<td align="center">0</td>
-</tr>
-<tr class="even">
-<td align="center">2020-04-26</td>
-<td align="center">Chowan</td>
-<td align="center">North Carolina</td>
-<td align="center">37041</td>
-<td align="center">7</td>
-<td align="center">0</td>
-</tr>
-<tr class="odd">
 <td align="center">2020-06-03</td>
-<td align="center">Audubon</td>
-<td align="center">Iowa</td>
-<td align="center">19009</td>
-<td align="center">13</td>
+<td align="center">Bannock</td>
+<td align="center">Idaho</td>
+<td align="center">16005</td>
+<td align="center">37</td>
 <td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">2020-05-08</td>
+<td align="center">Pinellas</td>
+<td align="center">Florida</td>
+<td align="center">12103</td>
+<td align="center">828</td>
+<td align="center">59</td>
+</tr>
+<tr class="even">
+<td align="center">2020-05-12</td>
+<td align="center">Sevier</td>
+<td align="center">Tennessee</td>
+<td align="center">47155</td>
+<td align="center">65</td>
+<td align="center">2</td>
+</tr>
+<tr class="odd">
+<td align="center">2020-04-22</td>
+<td align="center">Presque Isle</td>
+<td align="center">Michigan</td>
+<td align="center">26141</td>
+<td align="center">6</td>
+<td align="center">0</td>
 </tr>
 </tbody>
 </table>
@@ -154,43 +154,43 @@ df %>%
 <tbody>
 <tr class="odd">
 <td align="center">Mercer, New Jersey</td>
-<td align="center">2020-04-06</td>
+<td align="center">2020-05-31</td>
 <td align="center">371398</td>
 <td align="center">cases</td>
-<td align="center">740</td>
-<td align="center">86</td>
+<td align="center">6933</td>
+<td align="center">83</td>
 </tr>
 <tr class="even">
 <td align="center">Alameda, California</td>
-<td align="center">2020-06-06</td>
+<td align="center">2020-05-17</td>
 <td align="center">1638215</td>
 <td align="center">deaths</td>
-<td align="center">104</td>
+<td align="center">85</td>
 <td align="center">0</td>
 </tr>
 <tr class="odd">
+<td align="center">Alameda, California</td>
+<td align="center">2020-04-18</td>
+<td align="center">1638215</td>
+<td align="center">deaths</td>
+<td align="center">41</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
 <td align="center">Mercer, New Jersey</td>
-<td align="center">2020-03-31</td>
+<td align="center">2020-04-14</td>
 <td align="center">371398</td>
 <td align="center">cases</td>
-<td align="center">268</td>
-<td align="center">19</td>
-</tr>
-<tr class="even">
-<td align="center">Alameda, California</td>
-<td align="center">2020-06-10</td>
-<td align="center">1638215</td>
-<td align="center">deaths</td>
-<td align="center">110</td>
-<td align="center">0</td>
+<td align="center">1731</td>
+<td align="center">85</td>
 </tr>
 <tr class="odd">
 <td align="center">Alameda, California</td>
-<td align="center">2020-05-25</td>
+<td align="center">2020-05-16</td>
 <td align="center">1638215</td>
-<td align="center">cases</td>
-<td align="center">2895</td>
-<td align="center">27</td>
+<td align="center">deaths</td>
+<td align="center">85</td>
+<td align="center">1</td>
 </tr>
 </tbody>
 </table>
@@ -207,11 +207,12 @@ ggplot(df, aes(x = date, y = number/population*1e5, fill = type)) +
   geom_area(alpha    = 0.5,
             position = 'identity',
             show.legend = FALSE) +
-  scale_y_continuous(name   = 'Per 100,000 People',
-                     labels = scales::comma) +
+  scale_y_log10(name   = 'Per 100,000 People',
+                labels = scales::comma) +
   scale_x_date(name        = '',
                date_breaks = '1 week',
                labels      = scales::date_format('%m/%d')) +
+  geom_hline(yintercept = 10^(-2:3), size = 0.5, color = 'white') +
   facet_grid(type~county, scales = 'free_y') +
   theme_classic() +
   theme(axis.text.x = element_text(angle = 40, hjust = 1))
@@ -223,11 +224,15 @@ This looks at the daily increase.
 
 ``` r
 ggplot(df, aes(x = date, y = new/population*1e5, color = type)) +
+  geom_hline(yintercept = 10^(-2:3), size = 0.1) +
   geom_step(show.legend = FALSE) +
   scale_x_date(name        = '',
                date_breaks = '1 week',
                labels      = scales::date_format('%m/%d')) +
-  scale_y_continuous(name   = 'Daily Cases Per 100,000 People') +
+  scale_y_log10(name   = 'Daily Cases Per 100,000 People', 
+                breaks = 10^(-2:3),
+                limits = c(0.01,1000),
+                labels = scales::comma) +
   facet_grid(type~county, scales = 'free_y') +
   theme_classic() +
   theme(axis.text.x = element_text(angle = 40, hjust = 1))
@@ -242,11 +247,15 @@ df %>%
   dplyr::group_by(lubridate::week(date), type, county, population) %>% 
   dplyr::summarize(new = sum(new), date = min(date)) %>%
   ggplot(aes(x = date, y = new/population*1e5, color = type)) +
+  geom_hline(yintercept = 10^(-2:3), size = 0.1) +
   geom_step(show.legend = FALSE) +
   scale_x_date(name        = '',
                date_breaks = '1 week',
                labels      = scales::date_format('%m/%d')) +
-  scale_y_continuous(name   = 'Weekly Cases Per 100,000 People') +
+  scale_y_log10(name   = 'Weekly Cases Per 100,000 People', 
+                breaks = 10^(-2:3),
+                limits = c(0.01,1000),
+                labels = scales::comma) +
   facet_grid(type~county, scales = 'free_y') +
   theme_classic() +
   theme(axis.text.x = element_text(angle = 40, hjust = 1))
