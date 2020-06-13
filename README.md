@@ -1,7 +1,7 @@
 COVID-19 Data from NYT for Counties of Interest
 ================
 
-Updated: Sun Jun 7 15:24:09 2020
+Updated: Sat Jun 13 09:47:32 2020
 
 Get the Data
 ------------
@@ -26,12 +26,12 @@ df %>%
   pander::pandoc.table(caption = 'NYT COVID Tracking Data')
 ```
 
-<table style="width:89%;">
+<table style="width:96%;">
 <caption>NYT COVID Tracking Data</caption>
 <colgroup>
 <col width="18%" />
-<col width="16%" />
 <col width="20%" />
+<col width="23%" />
 <col width="11%" />
 <col width="11%" />
 <col width="11%" />
@@ -48,44 +48,44 @@ df %>%
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">2020-04-13</td>
-<td align="center">Hernando</td>
-<td align="center">Florida</td>
-<td align="center">12053</td>
-<td align="center">71</td>
-<td align="center">2</td>
+<td align="center">2020-03-07</td>
+<td align="center">Spokane</td>
+<td align="center">Washington</td>
+<td align="center">53063</td>
+<td align="center">4</td>
+<td align="center">0</td>
 </tr>
 <tr class="even">
-<td align="center">2020-05-16</td>
-<td align="center">Bulloch</td>
-<td align="center">Georgia</td>
-<td align="center">13031</td>
-<td align="center">45</td>
-<td align="center">2</td>
+<td align="center">2020-05-08</td>
+<td align="center">Harding</td>
+<td align="center">New Mexico</td>
+<td align="center">35021</td>
+<td align="center">1</td>
+<td align="center">0</td>
 </tr>
 <tr class="odd">
 <td align="center">2020-04-14</td>
-<td align="center">Linn</td>
-<td align="center">Oregon</td>
-<td align="center">41043</td>
-<td align="center">52</td>
-<td align="center">4</td>
+<td align="center">Androscoggin</td>
+<td align="center">Maine</td>
+<td align="center">23001</td>
+<td align="center">29</td>
+<td align="center">0</td>
 </tr>
 <tr class="even">
-<td align="center">2020-04-09</td>
-<td align="center">Codington</td>
-<td align="center">South Dakota</td>
-<td align="center">46029</td>
-<td align="center">12</td>
+<td align="center">2020-04-26</td>
+<td align="center">Chowan</td>
+<td align="center">North Carolina</td>
+<td align="center">37041</td>
+<td align="center">7</td>
 <td align="center">0</td>
 </tr>
 <tr class="odd">
-<td align="center">2020-05-19</td>
-<td align="center">Traill</td>
-<td align="center">North Dakota</td>
-<td align="center">38097</td>
-<td align="center">2</td>
-<td align="center">0</td>
+<td align="center">2020-06-03</td>
+<td align="center">Audubon</td>
+<td align="center">Iowa</td>
+<td align="center">19009</td>
+<td align="center">13</td>
+<td align="center">1</td>
 </tr>
 </tbody>
 </table>
@@ -153,44 +153,44 @@ df %>%
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">Alameda, California</td>
-<td align="center">2020-04-29</td>
-<td align="center">1638215</td>
-<td align="center">deaths</td>
-<td align="center">59</td>
-<td align="center">0</td>
+<td align="center">Mercer, New Jersey</td>
+<td align="center">2020-04-06</td>
+<td align="center">371398</td>
+<td align="center">cases</td>
+<td align="center">740</td>
+<td align="center">86</td>
 </tr>
 <tr class="even">
 <td align="center">Alameda, California</td>
-<td align="center">2020-03-29</td>
-<td align="center">1638215</td>
-<td align="center">cases</td>
-<td align="center">291</td>
-<td align="center">14</td>
-</tr>
-<tr class="odd">
-<td align="center">Alameda, California</td>
-<td align="center">2020-03-07</td>
-<td align="center">1638215</td>
-<td align="center">cases</td>
-<td align="center">3</td>
-<td align="center">0</td>
-</tr>
-<tr class="even">
-<td align="center">Alameda, California</td>
-<td align="center">2020-04-20</td>
+<td align="center">2020-06-06</td>
 <td align="center">1638215</td>
 <td align="center">deaths</td>
-<td align="center">42</td>
+<td align="center">104</td>
 <td align="center">0</td>
 </tr>
 <tr class="odd">
 <td align="center">Mercer, New Jersey</td>
-<td align="center">2020-04-29</td>
+<td align="center">2020-03-31</td>
 <td align="center">371398</td>
+<td align="center">cases</td>
+<td align="center">268</td>
+<td align="center">19</td>
+</tr>
+<tr class="even">
+<td align="center">Alameda, California</td>
+<td align="center">2020-06-10</td>
+<td align="center">1638215</td>
 <td align="center">deaths</td>
-<td align="center">220</td>
-<td align="center">8</td>
+<td align="center">110</td>
+<td align="center">0</td>
+</tr>
+<tr class="odd">
+<td align="center">Alameda, California</td>
+<td align="center">2020-05-25</td>
+<td align="center">1638215</td>
+<td align="center">cases</td>
+<td align="center">2895</td>
+<td align="center">27</td>
 </tr>
 </tbody>
 </table>
