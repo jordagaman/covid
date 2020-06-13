@@ -82,11 +82,12 @@ ggplot(df, aes(x = date, y = number/population*1e5, fill = type)) +
   geom_area(alpha    = 0.5,
             position = 'identity',
             show.legend = FALSE) +
-  scale_y_continuous(name   = 'Per 100,000 People',
-                     labels = scales::comma) +
+  scale_y_log10(name   = 'Per 100,000 People',
+                labels = scales::comma) +
   scale_x_date(name        = '',
                date_breaks = '1 week',
                labels      = scales::date_format('%m/%d')) +
+  geom_hline(yintercept = 10^(-2:3), size = 0.5, color = 'white') +
   facet_grid(type~county, scales = 'free_y') +
   theme_classic() +
   theme(axis.text.x = element_text(angle = 40, hjust = 1))
@@ -96,11 +97,15 @@ This looks at the daily increase.
 
 ```{r plot-daily, fig.height=3, fig.width=6}
 ggplot(df, aes(x = date, y = new/population*1e5, color = type)) +
+  geom_hline(yintercept = 10^(-2:3), size = 0.1) +
   geom_step(show.legend = FALSE) +
   scale_x_date(name        = '',
                date_breaks = '1 week',
                labels      = scales::date_format('%m/%d')) +
-  scale_y_continuous(name   = 'Daily Cases Per 100,000 People') +
+  scale_y_log10(name   = 'Daily Cases Per 100,000 People', 
+                breaks = 10^(-2:3),
+                limits = c(0.01,1000),
+                labels = scales::comma) +
   facet_grid(type~county, scales = 'free_y') +
   theme_classic() +
   theme(axis.text.x = element_text(angle = 40, hjust = 1))
@@ -112,11 +117,15 @@ df %>%
   dplyr::group_by(lubridate::week(date), type, county, population) %>% 
   dplyr::summarize(new = sum(new), date = min(date)) %>%
   ggplot(aes(x = date, y = new/population*1e5, color = type)) +
+  geom_hline(yintercept = 10^(-2:3), size = 0.1) +
   geom_step(show.legend = FALSE) +
   scale_x_date(name        = '',
                date_breaks = '1 week',
                labels      = scales::date_format('%m/%d')) +
-  scale_y_continuous(name   = 'Weekly Cases Per 100,000 People') +
+  scale_y_log10(name   = 'Weekly Cases Per 100,000 People', 
+                breaks = 10^(-2:3),
+                limits = c(0.01,1000),
+                labels = scales::comma) +
   facet_grid(type~county, scales = 'free_y') +
   theme_classic() +
   theme(axis.text.x = element_text(angle = 40, hjust = 1))
