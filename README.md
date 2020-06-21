@@ -1,7 +1,7 @@
 COVID-19 Data from NYT for Counties of Interest
 ================
 
-Updated: Sun Jun 21 14:52:13 2020
+Updated: Sun Jun 21 15:12:44 2020
 
 Get the Data
 ------------
@@ -26,12 +26,12 @@ df %>%
   pander::pandoc.table(caption = 'NYT COVID Tracking Data')
 ```
 
-<table style="width:89%;">
+<table style="width:88%;">
 <caption>NYT COVID Tracking Data</caption>
 <colgroup>
 <col width="18%" />
-<col width="18%" />
-<col width="19%" />
+<col width="20%" />
+<col width="15%" />
 <col width="11%" />
 <col width="11%" />
 <col width="11%" />
@@ -48,44 +48,44 @@ df %>%
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">2020-05-07</td>
-<td align="center">Benton</td>
-<td align="center">Minnesota</td>
-<td align="center">27009</td>
-<td align="center">64</td>
-<td align="center">1</td>
-</tr>
-<tr class="even">
-<td align="center">2020-06-07</td>
-<td align="center">Williamson</td>
-<td align="center">Texas</td>
-<td align="center">48491</td>
-<td align="center">691</td>
-<td align="center">28</td>
-</tr>
-<tr class="odd">
-<td align="center">2020-05-27</td>
-<td align="center">Love</td>
-<td align="center">Oklahoma</td>
-<td align="center">40085</td>
-<td align="center">15</td>
+<td align="center">2020-04-25</td>
+<td align="center">St. Clair</td>
+<td align="center">Alabama</td>
+<td align="center">01115</td>
+<td align="center">63</td>
 <td align="center">0</td>
 </tr>
 <tr class="even">
-<td align="center">2020-05-26</td>
-<td align="center">Marion</td>
-<td align="center">Mississippi</td>
-<td align="center">28091</td>
-<td align="center">110</td>
-<td align="center">9</td>
+<td align="center">2020-05-20</td>
+<td align="center">Greene</td>
+<td align="center">Iowa</td>
+<td align="center">19073</td>
+<td align="center">13</td>
+<td align="center">0</td>
 </tr>
 <tr class="odd">
-<td align="center">2020-06-04</td>
-<td align="center">Ripley</td>
-<td align="center">Indiana</td>
-<td align="center">18137</td>
-<td align="center">108</td>
-<td align="center">6</td>
+<td align="center">2020-05-16</td>
+<td align="center">Rappahannock</td>
+<td align="center">Virginia</td>
+<td align="center">51157</td>
+<td align="center">12</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="center">2020-04-19</td>
+<td align="center">Hamilton</td>
+<td align="center">Texas</td>
+<td align="center">48193</td>
+<td align="center">5</td>
+<td align="center">0</td>
+</tr>
+<tr class="odd">
+<td align="center">2020-03-24</td>
+<td align="center">Franklin</td>
+<td align="center">Vermont</td>
+<td align="center">50011</td>
+<td align="center">2</td>
+<td align="center">0</td>
 </tr>
 </tbody>
 </table>
@@ -115,8 +115,12 @@ df %<>%
   select(county, date, cases, deaths, population) %>%
   # tidy the data by putting all observations in rows
   gather(key = type, value = number, -date, -county, -population) %>%
-  # group by county and type (deaths or cases) to get a delta column for new cases in a day
+  # cases and deaths should be monotonically increasing, but the data is imperfect. 
+  # correct using the following lines, assuming that sometimes the count is prematurely high
   group_by(county, type) %>%
+  arrange(date %>% desc) %>%
+  mutate(number = cummin(number)) %>%
+  # get a delta column for new cases in a day
   arrange(date) %>%
   mutate(new = number - lag(number, default = 0)) %>%
   ungroup()
@@ -153,44 +157,44 @@ df %>%
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">Mercer, New Jersey</td>
-<td align="center">2020-04-24</td>
-<td align="center">371398</td>
-<td align="center">cases</td>
-<td align="center">3086</td>
-<td align="center">95</td>
+<td align="center">Alameda, California</td>
+<td align="center">2020-03-19</td>
+<td align="center">1638215</td>
+<td align="center">deaths</td>
+<td align="center">0</td>
+<td align="center">0</td>
 </tr>
 <tr class="even">
 <td align="center">Alameda, California</td>
-<td align="center">2020-03-26</td>
+<td align="center">2020-04-19</td>
 <td align="center">1638215</td>
-<td align="center">deaths</td>
+<td align="center">cases</td>
+<td align="center">1185</td>
+<td align="center">50</td>
+</tr>
+<tr class="odd">
+<td align="center">Alameda, California</td>
+<td align="center">2020-03-12</td>
+<td align="center">1638215</td>
+<td align="center">cases</td>
+<td align="center">29</td>
 <td align="center">4</td>
-<td align="center">2</td>
+</tr>
+<tr class="even">
+<td align="center">Mercer, New Jersey</td>
+<td align="center">2020-06-14</td>
+<td align="center">371398</td>
+<td align="center">cases</td>
+<td align="center">7351</td>
+<td align="center">28</td>
 </tr>
 <tr class="odd">
 <td align="center">Mercer, New Jersey</td>
-<td align="center">2020-04-08</td>
+<td align="center">2020-05-02</td>
 <td align="center">371398</td>
 <td align="center">cases</td>
-<td align="center">992</td>
-<td align="center">155</td>
-</tr>
-<tr class="even">
-<td align="center">Alameda, California</td>
-<td align="center">2020-03-14</td>
-<td align="center">1638215</td>
-<td align="center">deaths</td>
-<td align="center">0</td>
-<td align="center">0</td>
-</tr>
-<tr class="odd">
-<td align="center">Alameda, California</td>
-<td align="center">2020-03-22</td>
-<td align="center">1638215</td>
-<td align="center">cases</td>
-<td align="center">127</td>
-<td align="center">40</td>
+<td align="center">4271</td>
+<td align="center">194</td>
 </tr>
 </tbody>
 </table>
