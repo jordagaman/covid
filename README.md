@@ -1,7 +1,7 @@
 COVID-19 Data from NYT for Counties of Interest
 ================
 
-Updated: Sat Jun 13 10:06:17 2020
+Updated: Sun Jun 21 14:52:13 2020
 
 Get the Data
 ------------
@@ -26,12 +26,12 @@ df %>%
   pander::pandoc.table(caption = 'NYT COVID Tracking Data')
 ```
 
-<table style="width:90%;">
+<table style="width:89%;">
 <caption>NYT COVID Tracking Data</caption>
 <colgroup>
 <col width="18%" />
-<col width="20%" />
 <col width="18%" />
+<col width="19%" />
 <col width="11%" />
 <col width="11%" />
 <col width="11%" />
@@ -48,44 +48,44 @@ df %>%
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">2020-04-17</td>
-<td align="center">Humboldt</td>
-<td align="center">California</td>
-<td align="center">06023</td>
-<td align="center">52</td>
-<td align="center">0</td>
-</tr>
-<tr class="even">
-<td align="center">2020-06-03</td>
-<td align="center">Bannock</td>
-<td align="center">Idaho</td>
-<td align="center">16005</td>
-<td align="center">37</td>
+<td align="center">2020-05-07</td>
+<td align="center">Benton</td>
+<td align="center">Minnesota</td>
+<td align="center">27009</td>
+<td align="center">64</td>
 <td align="center">1</td>
 </tr>
+<tr class="even">
+<td align="center">2020-06-07</td>
+<td align="center">Williamson</td>
+<td align="center">Texas</td>
+<td align="center">48491</td>
+<td align="center">691</td>
+<td align="center">28</td>
+</tr>
 <tr class="odd">
-<td align="center">2020-05-08</td>
-<td align="center">Pinellas</td>
-<td align="center">Florida</td>
-<td align="center">12103</td>
-<td align="center">828</td>
-<td align="center">59</td>
+<td align="center">2020-05-27</td>
+<td align="center">Love</td>
+<td align="center">Oklahoma</td>
+<td align="center">40085</td>
+<td align="center">15</td>
+<td align="center">0</td>
 </tr>
 <tr class="even">
-<td align="center">2020-05-12</td>
-<td align="center">Sevier</td>
-<td align="center">Tennessee</td>
-<td align="center">47155</td>
-<td align="center">65</td>
-<td align="center">2</td>
+<td align="center">2020-05-26</td>
+<td align="center">Marion</td>
+<td align="center">Mississippi</td>
+<td align="center">28091</td>
+<td align="center">110</td>
+<td align="center">9</td>
 </tr>
 <tr class="odd">
-<td align="center">2020-04-22</td>
-<td align="center">Presque Isle</td>
-<td align="center">Michigan</td>
-<td align="center">26141</td>
+<td align="center">2020-06-04</td>
+<td align="center">Ripley</td>
+<td align="center">Indiana</td>
+<td align="center">18137</td>
+<td align="center">108</td>
 <td align="center">6</td>
-<td align="center">0</td>
 </tr>
 </tbody>
 </table>
@@ -154,43 +154,43 @@ df %>%
 <tbody>
 <tr class="odd">
 <td align="center">Mercer, New Jersey</td>
-<td align="center">2020-05-31</td>
+<td align="center">2020-04-24</td>
 <td align="center">371398</td>
 <td align="center">cases</td>
-<td align="center">6933</td>
-<td align="center">83</td>
+<td align="center">3086</td>
+<td align="center">95</td>
 </tr>
 <tr class="even">
 <td align="center">Alameda, California</td>
-<td align="center">2020-05-17</td>
+<td align="center">2020-03-26</td>
 <td align="center">1638215</td>
 <td align="center">deaths</td>
-<td align="center">85</td>
+<td align="center">4</td>
+<td align="center">2</td>
+</tr>
+<tr class="odd">
+<td align="center">Mercer, New Jersey</td>
+<td align="center">2020-04-08</td>
+<td align="center">371398</td>
+<td align="center">cases</td>
+<td align="center">992</td>
+<td align="center">155</td>
+</tr>
+<tr class="even">
+<td align="center">Alameda, California</td>
+<td align="center">2020-03-14</td>
+<td align="center">1638215</td>
+<td align="center">deaths</td>
+<td align="center">0</td>
 <td align="center">0</td>
 </tr>
 <tr class="odd">
 <td align="center">Alameda, California</td>
-<td align="center">2020-04-18</td>
+<td align="center">2020-03-22</td>
 <td align="center">1638215</td>
-<td align="center">deaths</td>
-<td align="center">41</td>
-<td align="center">1</td>
-</tr>
-<tr class="even">
-<td align="center">Mercer, New Jersey</td>
-<td align="center">2020-04-14</td>
-<td align="center">371398</td>
 <td align="center">cases</td>
-<td align="center">1731</td>
-<td align="center">85</td>
-</tr>
-<tr class="odd">
-<td align="center">Alameda, California</td>
-<td align="center">2020-05-16</td>
-<td align="center">1638215</td>
-<td align="center">deaths</td>
-<td align="center">85</td>
-<td align="center">1</td>
+<td align="center">127</td>
+<td align="center">40</td>
 </tr>
 </tbody>
 </table>
@@ -215,7 +215,7 @@ ggplot(df, aes(x = date, y = number/population*1e5, fill = type)) +
   geom_hline(yintercept = 10^(-2:3), size = 0.5, color = 'white') +
   facet_grid(type~county, scales = 'free_y') +
   theme_classic() +
-  theme(axis.text.x = element_text(angle = 40, hjust = 1))
+  theme(axis.text.x = element_text(angle = 50, hjust = 1))
 ```
 
 ![](README_files/figure-markdown_github/plot-cumulative-1.png)
@@ -235,7 +235,7 @@ ggplot(df, aes(x = date, y = new/population*1e5, color = type)) +
                 labels = scales::comma) +
   facet_grid(type~county, scales = 'free_y') +
   theme_classic() +
-  theme(axis.text.x = element_text(angle = 40, hjust = 1))
+  theme(axis.text.x = element_text(angle = 50, hjust = 1))
 ```
 
 ![](README_files/figure-markdown_github/plot-daily-1.png)
@@ -258,7 +258,7 @@ df %>%
                 labels = scales::comma) +
   facet_grid(type~county, scales = 'free_y') +
   theme_classic() +
-  theme(axis.text.x = element_text(angle = 40, hjust = 1))
+  theme(axis.text.x = element_text(angle = 50, hjust = 1))
 ```
 
 ![](README_files/figure-markdown_github/plot-weekly-1.png)
