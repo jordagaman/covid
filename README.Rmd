@@ -90,7 +90,7 @@ ggplot(df, aes(x = date, y = number/population*1e5, fill = type)) +
   geom_hline(yintercept = 10^(-2:3), size = 0.5, color = 'white') +
   facet_grid(type~county, scales = 'free_y') +
   theme_classic() +
-  theme(axis.text.x = element_text(angle = 40, hjust = 1))
+  theme(axis.text.x = element_text(angle = 50, hjust = 1))
 ```
 
 This looks at the daily increase.
@@ -108,7 +108,7 @@ ggplot(df, aes(x = date, y = new/population*1e5, color = type)) +
                 labels = scales::comma) +
   facet_grid(type~county, scales = 'free_y') +
   theme_classic() +
-  theme(axis.text.x = element_text(angle = 40, hjust = 1))
+  theme(axis.text.x = element_text(angle = 50, hjust = 1))
 ```
 
 Because of the noise in the daily data, maybe a weekly increase is a better idea.
@@ -128,5 +128,5 @@ df %>%
                 labels = scales::comma) +
   facet_grid(type~county, scales = 'free_y') +
   theme_classic() +
-  theme(axis.text.x = element_text(angle = 40, hjust = 1))
+  theme(axis.text.x = element_text(angle = 50, hjust = 1))
 ```
